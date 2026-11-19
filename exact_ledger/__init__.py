@@ -60,13 +60,43 @@ from .replay import (
     UnknownOutputError,
     UnknownResultError,
 )
+from .scheme import (
+    Channel,
+    DuplicateChannelError,
+    InvalidSchemeError,
+    MeasurementScheme,
+    MeasurementSchemeError,
+    MeasurementSchemeService,
+    UnknownChannelError,
+    UnknownColumnError,
+)
+from .readings import (
+    InvalidReadingError,
+    Reading,
+    ReadingConflictError,
+    ReadingError,
+    ReadingStore,
+    UnknownReadingError,
+)
+from .joint import (
+    DuplicateProofError,
+    InvalidTargetError,
+    JointError,
+    JointService,
+    Proof,
+    UnknownProofError,
+    UnknownRecordError,
+    UnknownSchemeError,
+    open_joint,
+)
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 __all__ = [
     "__version__",
     "open_warehouse",
     "open_connection",
+    "open_joint",
     # rational
     "RationalError",
     "as_fraction",
@@ -100,6 +130,31 @@ __all__ = [
     "InvalidFactError",
     "RevisionConflictError",
     "GroupMigrationError",
+    # measurement schemes
+    "MeasurementSchemeService",
+    "MeasurementScheme",
+    "Channel",
+    "MeasurementSchemeError",
+    "DuplicateChannelError",
+    "UnknownColumnError",
+    "UnknownChannelError",
+    "InvalidSchemeError",
+    # joint readings
+    "ReadingStore",
+    "Reading",
+    "ReadingError",
+    "InvalidReadingError",
+    "ReadingConflictError",
+    "UnknownReadingError",
+    # joint recovery
+    "JointService",
+    "Proof",
+    "JointError",
+    "UnknownRecordError",
+    "UnknownSchemeError",
+    "UnknownProofError",
+    "DuplicateProofError",
+    "InvalidTargetError",
 ]
 
 
